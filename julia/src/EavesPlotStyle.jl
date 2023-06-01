@@ -3,8 +3,8 @@ using PythonPlot
 import Plots.RGB, Plots.cgrad, Plots.@colorant_str
 
 export eaves_plot
-export KS_palette, KS_gradient
-export nord_palette, nord_gradient
+export KS_palette, pyKS_palette, KS_gradient
+export nord_palette, pynord_palette, nord_gradient
 
 """
     eaves_plot_style()
@@ -15,19 +15,23 @@ function eaves_plot_style()
     p = PythonPlot.matplotlib
 
     p.rcParams["font.sans-serif"] = "Arial"
+    p.rcParams["font.size"] = 35
+    # p.rcParams["figure.labelsize"] = 40
+    # p.rcParams["figure.titlesize"] = 60
 
     p.rcParams["axes.spines.left"] = true
     p.rcParams["axes.spines.bottom"] = true
     p.rcParams["axes.spines.right"] = true
     p.rcParams["axes.spines.top"] = true
-    p.rcParams["axes.titlepad"] = 25
-    p.rcParams["axes.linewidth"] = 8.0
+    p.rcParams["axes.titlepad"] = 20
+    p.rcParams["axes.linewidth"] = 6.0
+    # p.rcParams["axes.labelsize"] = 50
 
 
-    p.rcParams["xtick.labelsize"] = 40
+    p.rcParams["xtick.labelsize"] = 30
     p.rcParams["xtick.major.size"] = 30 * 0.5
     p.rcParams["xtick.major.width"] = 8
-    p.rcParams["xtick.major.pad"] = 15
+    p.rcParams["xtick.major.pad"] = 12
     p.rcParams["xtick.direction"] = "in"
 
     p.rcParams["xtick.minor.size"] = 0.0
@@ -35,10 +39,10 @@ function eaves_plot_style()
     p.rcParams["xtick.minor.pad"] = 15
     p.rcParams["xtick.direction"] = "in"
 
-    p.rcParams["ytick.labelsize"] = 40
+    p.rcParams["ytick.labelsize"] = 30
     p.rcParams["ytick.major.size"] = 30 * 0.5
     p.rcParams["ytick.major.width"] = 8
-    p.rcParams["ytick.major.pad"] = 15
+    p.rcParams["ytick.major.pad"] = 12
     p.rcParams["ytick.direction"] = "in"
 
     p.rcParams["ytick.minor.size"] = 0.0
@@ -46,7 +50,14 @@ function eaves_plot_style()
     p.rcParams["ytick.minor.pad"] = 15
     p.rcParams["ytick.direction"] = "in"
 
-    p.rcParams["lines.linewidth"] = 8.0
+    p.rcParams["lines.linewidth"] = 6.0
+
+    p.rcParams["figure.autolayout"] = true
+    # p.rcParams["figure.constrained_layout.use"] = true
+    # p.rcParams["figure.subplot.left"] = 0.5
+    # p.rcParams["figure.subplot.right"] = 0.95
+    # p.rcParams["figure.constrained_layout.wspace"] = 0.1
+    # p.rcParams["figure.constrained_layout.hspace"] = 0.1
 
     # p.rcParams["image.aspect"] = 1.618
     # p.rcParams["figure.dpi"] = 300
@@ -72,6 +83,8 @@ global KS_palette = [
     RGB(98 / 255, 30 / 255, 66 / 255)
 ]
 
+global pyKS_palette = [(KS_palette[i].r, KS_palette[i].g, KS_palette[i].b) for i in 1:length(KS_palette)]
+
 global KS_gradient = cgrad(KS_palette, 0:1/11:1.0, alpha=nothing, rev=false, scale=nothing, categorical=nothing)
 
 global nord_palette = [
@@ -82,6 +95,9 @@ global nord_palette = [
     colorant"#B48EAD",
     colorant"#D08770"
 ]
+
+global pynord_palette = [(nord_palette[i].r, nord_palette[i].g, nord_palette[i].b) for i in 1:length(nord_palette)]
+
 
 global nord_gradient = cgrad(nord_palette, 0:1/11:1.0, alpha=nothing, rev=false, scale=nothing, categorical=nothing)
 
