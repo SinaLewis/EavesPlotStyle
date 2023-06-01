@@ -52,10 +52,10 @@ plt.xlabel("Nth Number")
 plt.ylabel("Random Number from randn()")
 plt.legend(frameon=false, fontsize=25, loc="upper right")
 
-plt.savefig("2x1_subplot_example.pdf")
+plt.savefig("2x1_subplot_example.png")
 ```
 
-<img src="julia/test/2x1_subplot_example.pdf"
+<img src="julia/2x1_subplot_example.png"
     alt="example plot"
     style="float: center" />
 
