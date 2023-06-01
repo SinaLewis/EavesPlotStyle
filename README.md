@@ -59,4 +59,34 @@ plt.savefig("2x1_subplot_example.png")
     alt="example plot"
     style="float: center" />
 
+We can create the same graph using the function `create_panel(w, h, s)` that takes the number of columns (w) and rows (h) and overall scale (s) of the plot as an argument.
+
+```
+using EavesPlotStyle
+
+xyRand = rand(30, 3)
+xyRandN = randn(30, 3)
+
+xlabels=["Nth Number","Nth Number"]
+ylabels=["Random Number from rand()","Random Number from randn()"]
+
+plt,axMat = create_panel(2,1,12,xlabels,ylabels)
+
+for i in 1:length(xyRand[1, :])
+    axMat[1][1].plot(xyRand[:, i], c=pynord_palette[i], label="Random Array $i")
+end
+# switch active axis for edits
+plt.axes(axMat[1][1])
+plt.legend(frameon=false, fontsize=25, loc="upper right")
+
+for i in 1:length(xyRandN[1, :])
+    axMat[1][2].plot(xyRandN[:, i], c=pynord_palette[i], label="Random Array $i")
+end
+# switch active axis for edits
+plt.axes(axMat[1][2])
+plt.legend(frameon=false, fontsize=25, loc="upper right")
+
+plt.savefig("2x1_subplot_example2.png")
+```
+
 ## Matlab

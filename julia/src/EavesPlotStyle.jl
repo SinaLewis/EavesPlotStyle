@@ -2,7 +2,7 @@ module EavesPlotStyle
 using PythonPlot
 import Plots.RGB, Plots.cgrad, Plots.@colorant_str
 
-export eaves_plot
+export eaves_plot, create_panel
 export KS_palette, pyKS_palette, KS_gradient
 export nord_palette, pynord_palette, nord_gradient
 
@@ -68,6 +68,26 @@ end
 function eaves_plot()
     eaves_plot_style()
     return PythonPlot.matplotlib.pyplot
+end
+
+function create_panel(width, height, scale, xlabels, ylabels)
+    plt = eaves_plot()
+    plt.figure(figsize=(width * scale, height * scale)) ## great for creating a 1 row, 2 column set of subplots
+    ax = []
+    k = 1
+    for i in 1:height
+        axRow = []
+        for j in 1:width
+            push!(axRow, plt.subplot(height, width, k))
+
+            plt.xlabel(xlabels[k])
+            plt.ylabel(ylabels[k])
+
+            k += 1
+        end
+        push!(ax, axRow)
+    end
+    return plt, ax
 end
 
 global KS_palette = [
