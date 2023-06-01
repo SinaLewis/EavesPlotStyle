@@ -3,6 +3,10 @@ uuid = "3b0db9fc-9eeb-49fa-9f61-a6855fc810e5"
 authors = ["SinaLewis <sile6618@colorado.edu> and contributors"]
 version = "1.0.0-DEV"
 
+[deps]
+PythonCall = "6099a3de-0909-46bc-b1f4-468b9a2dfc0d"
+PythonPlot = "274fc56d-3b97-40fa-a1cd-1b4a50311bf9"
+
 [compat]
 julia = "1"
 
