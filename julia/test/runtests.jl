@@ -6,7 +6,7 @@ xyRandN = randn(30, 3)
 plt = eaves_plot()
 
 
-scale = 12
+scale = 20
 
 plt.figure(figsize=(2 * scale, 2 * scale)) ## great for creating a 1 row, 2 column set of subplots
 

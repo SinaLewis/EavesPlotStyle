@@ -52,8 +52,8 @@ function eaves_plot_style()
 
     p.rcParams["lines.linewidth"] = 6.0
 
-    p.rcParams["figure.autolayout"] = true
-    # p.rcParams["figure.constrained_layout.use"] = true
+    # p.rcParams["figure.autolayout"] = true
+    p.rcParams["figure.constrained_layout.use"] = true
     # p.rcParams["figure.subplot.left"] = 0.5
     # p.rcParams["figure.subplot.right"] = 0.95
     # p.rcParams["figure.constrained_layout.wspace"] = 0.1
