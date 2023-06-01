@@ -83,7 +83,7 @@ global KS_palette = [
     RGB(98 / 255, 30 / 255, 66 / 255)
 ]
 
-global pyKS_palette = [(KS_palette[i].r, KS_palette[i].g, KS_palette[i].b) for i in 1:length(KS_palette)]
+global pyKS_palette = [(KS_palette[i].r, KS_palette[i].g, KS_palette[i].b) for i in eachindex(KS_palette)]
 
 global KS_gradient = cgrad(KS_palette, 0:1/11:1.0, alpha=nothing, rev=false, scale=nothing, categorical=nothing)
 
@@ -96,7 +96,7 @@ global nord_palette = [
     colorant"#D08770"
 ]
 
-global pynord_palette = [(nord_palette[i].r, nord_palette[i].g, nord_palette[i].b) for i in 1:length(nord_palette)]
+global pynord_palette = [(nord_palette[i].r, nord_palette[i].g, nord_palette[i].b) for i in eachindex(nord_palette)]
 
 
 global nord_gradient = cgrad(nord_palette, 0:1/11:1.0, alpha=nothing, rev=false, scale=nothing, categorical=nothing)
