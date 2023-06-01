@@ -59,7 +59,7 @@ plt.savefig("2x1_subplot_example.png")
     alt="example plot"
     style="float: center" />
 
-We can create the same graph using the function `create_panel(w, h, s)` that takes the number of columns (w) and rows (h) and overall scale (s) of the plot as an argument.
+We can create the same graph using the function `create_panel(w, h, s,xlabels,ylabels)` that takes the number of columns (w) and rows (h), overall scale (s), x-axis labels, and y-axis labels, of the plot as an argument.
 
 ```
 using EavesPlotStyle
