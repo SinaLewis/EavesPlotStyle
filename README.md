@@ -41,6 +41,7 @@ for i in 1:length(xyRand[1, :])
 end
 plt.xlabel("Nth Number")
 plt.ylabel("Random Number from rand()")
+plt.legend(frameon=false, fontsize=25, loc="upper right")
 
 ax = plt.subplot(1, 2, 2)
 for i in 1:length(xyRandN[1, :])
@@ -49,6 +50,7 @@ end
 
 plt.xlabel("Nth Number")
 plt.ylabel("Random Number from randn()")
+plt.legend(frameon=false, fontsize=25, loc="upper right")
 
 plt.savefig("2x1_subplot_example.pdf")
 ```
